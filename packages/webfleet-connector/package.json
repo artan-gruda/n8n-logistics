@@ -1,0 +1,57 @@
+{
+  "name": "@n8n/webfleet-connector",
+  "version": "1.0.0",
+  "description": "Webfleet FMS system integration connector for logistics operations",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "https://n8n.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n8n-io/n8n.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "format": "biome format --write .",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "files": [
+    "dist",
+    "credentials",
+    "nodes"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/WebfleetApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Webfleet/Webfleet.node.js"
+    ]
+  },
+  "keywords": [
+    "n8n-community-node-package",
+    "webfleet",
+    "fleet-management",
+    "logistics",
+    "telematics",
+    "bridgestone"
+  ],
+  "dependencies": {
+    "axios": "^1.6.0",
+    "crypto": "^1.0.1",
+    "date-fns": "^2.30.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "typescript": "~5.6.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
